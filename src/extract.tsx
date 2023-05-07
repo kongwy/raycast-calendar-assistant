@@ -1,4 +1,4 @@
-import { Form, ActionPanel, Action, showToast, Detail, useNavigation, LocalStorage, Toast, environment, } from "@raycast/api";
+import { Form, ActionPanel, Action, showToast, Detail, useNavigation, LocalStorage, Toast, environment, open } from "@raycast/api";
 import { DEFAULT_MODEL, MODELS, Model } from "./utilities/constant";
 import requestCalendarEvent from "./utilities/openai";
 import { useEffect, useState } from "react";
