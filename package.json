@@ -1,0 +1,87 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "calendar-assistant",
+  "title": "Calendar Assistant",
+  "description": "Extract calendar events from messages. Powered by OpenAI.",
+  "icon": "command-icon.png",
+  "author": "momok",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "extract",
+      "title": "Extract Calendar Event",
+      "description": "Generate a calendar event from email, messages, or any texts.",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "key",
+      "description": "Enter your OpenAI API key",
+      "type": "password",
+      "required": true,
+      "title": "OpenAI API Key",
+      "placeholder": "sk-************************************************"
+    },
+    {
+      "name": "model",
+      "description": "Select a default model to use",
+      "type": "dropdown",
+      "required": true,
+      "title": "Default Model",
+      "default": "gpt-4",
+      "data": [
+        {
+          "title": "GPT-4",
+          "value": "gpt-4"
+        },
+        {
+          "title": "GPT-4-0314",
+          "value": "gpt-4-0314"
+        },
+        {
+          "title": "GPT-4-32K",
+          "value": "gpt-4-32k"
+        },
+        {
+          "title": "GPT-4-32K-0314",
+          "value": "gpt-4-32k-0314"
+        },
+        {
+          "title": "GPT-3.5-turbo",
+          "value": "gpt-3.5-turbo"
+        },
+        {
+          "title": "GPT-3.5-turbo-0301",
+          "value": "gpt-3.5-turbo-0301"
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.50.2",
+    "@raycast/utils": "^1.5.2",
+    "@react-hookz/web": "^23.0.0",
+    "ical.js": "^1.5.0",
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "^18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish",
+    "save_open": "save_open.sh"
+  }
+}
