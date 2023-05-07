@@ -82,6 +82,8 @@ export function Preview(prop: PreviewProps) {
     function format(data: string | undefined) {
         if (data == undefined) {
             return "Loading..."
+        } else if (data === "null") {
+            return "No events found."
         } else {
             return `
 \`\`\`
