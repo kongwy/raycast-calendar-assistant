@@ -2,13 +2,12 @@ import { Form, ActionPanel, Action, showToast, Detail, useNavigation, LocalStora
 import { DEFAULT_MODEL, MODELS, Model } from "./utilities/constant";
 import requestCalendarEvent from "./utilities/openai";
 import { useEffect, useState } from "react";
-import { useExec } from "@raycast/utils";
 import * as fs from 'fs';
 
 export default function Command() {
     const [model, setModel] = useState<Model>(DEFAULT_MODEL)
     const [source, setSource] = useState<string>("")
-    const [open, setOpen] = useState<boolean>(false)
+    // const [open, setOpen] = useState<boolean>(false)
     const { push } = useNavigation()
 
     function onModelChange(newValue: string) {
@@ -17,7 +16,7 @@ export default function Command() {
     }
 
     function onSubmit() {
-        push(<Preview model={model} source={source} open={open} />)
+        push(<Preview model={model} source={source} />)
     }
 
     return (
@@ -34,7 +33,11 @@ export default function Command() {
                 info={model.desc}
             >
                 {MODELS.map((model) => (
-                    <Form.Dropdown.Item title={model.id} value={model.id} key={model.id} />
+                    <Form.Dropdown.Item
+                        title={model.id === DEFAULT_MODEL.id ? `${model.id} (Default)` : model.id}
+                        value={model.id}
+                        key={model.id}
+                    />
                 ))}
             </Form.Dropdown>
             <Form.TextArea
@@ -45,12 +48,12 @@ export default function Command() {
                 onChange={setSource}
                 autoFocus
             />
-            <Form.Checkbox
+            {/* <Form.Checkbox
                 id="open"
                 label="Open calendar event file after generation completed"
                 value={open}
                 onChange={setOpen}
-            />
+            /> */}
         </Form>
     );
 }
@@ -58,7 +61,6 @@ export default function Command() {
 interface PreviewProps {
     model: Model
     source: string
-    open: boolean
 }
 
 export function Preview(prop: PreviewProps) {

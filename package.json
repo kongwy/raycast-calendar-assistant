@@ -35,28 +35,16 @@
       "default": "gpt-4",
       "data": [
         {
-          "title": "GPT-4",
+          "title": "gpt-4",
           "value": "gpt-4"
         },
         {
-          "title": "GPT-4-0314",
-          "value": "gpt-4-0314"
-        },
-        {
-          "title": "GPT-4-32K",
+          "title": "gpt-4-32K",
           "value": "gpt-4-32k"
         },
         {
-          "title": "GPT-4-32K-0314",
-          "value": "gpt-4-32k-0314"
-        },
-        {
-          "title": "GPT-3.5-turbo",
+          "title": "gpt-3.5-turbo",
           "value": "gpt-3.5-turbo"
-        },
-        {
-          "title": "GPT-3.5-turbo-0301",
-          "value": "gpt-3.5-turbo-0301"
         }
       ]
     }
@@ -81,7 +69,6 @@
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
-    "publish": "npx @raycast/api@latest publish",
-    "save_open": "save_open.sh"
+    "publish": "npx @raycast/api@latest publish"
   }
 }

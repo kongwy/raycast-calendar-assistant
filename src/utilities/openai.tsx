@@ -3,7 +3,7 @@ import { useAsync, useAsyncAbortable } from "@react-hookz/web";
 import { PREFERENCES, PROMPT } from "./constant";
 import { usePromise } from "@raycast/utils"
 
-export default function requestCalendarEvent(model: string, source: string, onError?: (error: Error) => void) {
+export default function requestCalendarEvent(model: string, source: string, onError?: (error: Error) => void, onData?: (data?: string) => void) {
     const openai = new OpenAIApi(new Configuration({
         apiKey: PREFERENCES.key
     }))
@@ -23,7 +23,8 @@ export default function requestCalendarEvent(model: string, source: string, onEr
         },
         [],
         {
-            onError: onError
+            onError: onError,
+            onData: onData
         }
     )
 }
