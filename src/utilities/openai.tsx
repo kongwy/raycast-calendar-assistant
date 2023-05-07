@@ -1,5 +1,4 @@
 import { Configuration, CreateChatCompletionRequest, OpenAIApi } from "openai";
-import { useAsync, useAsyncAbortable } from "@react-hookz/web";
 import { PREFERENCES, PROMPT } from "./constant";
 import { usePromise } from "@raycast/utils"
 

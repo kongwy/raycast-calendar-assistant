@@ -52,8 +52,6 @@
   "dependencies": {
     "@raycast/api": "^1.50.2",
     "@raycast/utils": "^1.5.2",
-    "@react-hookz/web": "^23.0.0",
-    "ical.js": "^1.5.0",
     "openai": "^3.2.1"
   },
   "devDependencies": {
